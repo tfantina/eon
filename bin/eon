@@ -1,0 +1,4 @@
+ #!/usr/bin/env ruby
+ require "eon/cli"
+
+Eon::CLI.start
