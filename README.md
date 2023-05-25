@@ -1,34 +1,31 @@
-# Eon
+# Eon 🗝
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/eon`. To experiment with that code, run `bin/console` for an interactive prompt.
+Eon is a tool for encrypting and decrypting short text files on the fly. It's primary goal is to provide a secure way to encrypt `.env` files so that they can be checked into version control. 
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Eventually I'd like to publish Eon as a Homebrew formula so that it can be quickly installed and used without hassle. However for the time being you need to add the `/bin/eon` to your 
+`$PATH`.  This can be done by editing your `.zshrc` or `.bashrc` with this line: `export PATH="~/eon/lib/eon:$PATH"` (of course the path needs to be relative to wherever you have the Eon folder).
 
-Install the gem and add to the application's Gemfile by executing:
-
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
 
 ## Usage
 
-TODO: Write usage instructions here
+At the moment Eon has three commands:
+
+`eon.rb generate` which creates a new `eon_aes.key` this is a secret aes key used for encrypting and decrypting files. Keep this key with your project but **DO NOT** check it into version control.
+`.gitignore` `eon_aes.key`! For any developers working on the project who need access to encrypted .env files give them a copy of this file using a secure service such as Keybase.
+
+`eon.rb encrypt file destination` `encrypt` takes two argements the first is an unencrypted file `.env` for example, and the second is a destination where a new encrypted file will be created: `.env.encrypted`
+
+`eon.rb decrypt file destination` `decrypt` takes two arguments, the first is an encrypted file `.env.encrypted` for examople, and the second is a destination where the decrypted file will live: `.env`
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+I'm still working on this, I haven't quite figured out how to create Homebrew formula, I'm open to PRs.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/eon.
+Bug reports and pull requests are welcome on GitHub at https://github.com/tfantina/eon.
 
 ## License
 

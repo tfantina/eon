@@ -1,8 +1,14 @@
+#!/usr/bin/env ruby
+
 require "thor"
 require "eon"
 
 module Eon
   class CLI < Thor
+    def self.exit_on_failure?
+      true
+    end
+
     desc "generate", "Creats a new AES Key"
     def generate
       Eon.generate
@@ -10,12 +16,14 @@ module Eon
 
     desc "encrypt", "Encrypts with an eon_aes.key"
     def encrypt(target, destination)
-        Eon.encrypt_file(target, destination)
+      Eon.encrypt_file(target, destination)
     end
 
     desc "decrypt", "Decrypts with an eon_aes.key"
     def decrypt(target, destination)
-        Eon.decrypt_file(target, destination)
-    end 
+      Eon.decrypt_file(target, destination)
+    end
   end
 end
+
+Eon::CLI.start

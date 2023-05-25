@@ -1,4 +1,4 @@
  #!/usr/bin/env ruby
- require "eon/cli"
+ require "eon/eon.rb"
 
-Eon::CLI.start
+Eon::CLI.start(ARGV)
