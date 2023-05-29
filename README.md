@@ -2,11 +2,13 @@
 
 Eon is a tool for encrypting and decrypting short text files on the fly. It's primary goal is to provide a secure way to encrypt `.env` files so that they can be checked into version control. 
 
+In RubyGems 💎 Eon is called `eon_crypt` - this is to distinguish between another gem. The name Eon is used in this gem for the ease of typing three letters.
+
 ## Installation
 
-Eventually I'd like to publish Eon as a Homebrew formula so that it can be quickly installed and used without hassle. However for the time being you need to add the `/bin/eon` to your 
-`$PATH`.  This can be done by editing your `.zshrc` or `.bashrc` with this line: `export PATH="~/eon/lib/eon:$PATH"` (of course the path needs to be relative to wherever you have the Eon folder).
+`gem install eon_crypt`
 
+Eventually I'd like to publish Eon as a Homebrew formula so that it can be quickly installed and used without hassle. 
 
 ## Usage
 

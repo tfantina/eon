@@ -1,4 +1,4 @@
- #!/usr/bin/env ruby
- require "eon/eon.rb"
+#!/usr/bin/env ruby
+require_relative "../lib/eon/eon"
 
 Eon::CLI.start(ARGV)
