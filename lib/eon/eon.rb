@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require "thor"
 require "eon"
+require "thor"
 
 module Eon
   class CLI < Thor
@@ -25,5 +25,3 @@ module Eon
     end
   end
 end
-
-Eon::CLI.start

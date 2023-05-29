@@ -6,6 +6,7 @@
 /pkg/
 /spec/reports/
 /tmp/
+eon_crypt-*.gem
 
 # Files I've been generating during tests!
 .env 
